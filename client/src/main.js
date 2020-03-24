@@ -1,11 +1,9 @@
 import Vue from 'vue'
 import vuetify from '@/plugins/vuetify'
 import VueRouter from 'vue-router'
-import DogsPage from './components/DogsPage.vue'
-import DogDetails from './components/DogDetails.vue'
-import AdoptForm from './components/AdoptForm.vue'
-import Dashboard from './components/Dashboard.vue';
-import NavBar from './components/NavBar'
+import DogDetails from './components/views/DogDetails'
+import Nav from './components/Nav'
+import Home from './components/views/Home'
 
 Vue.config.productionTip = false
 
@@ -14,11 +12,11 @@ Vue.use(VueRouter)
 
 
 const routes = [
-  { path: '/', component: NavBar },
-  { path: '/dogspage', component: DogsPage },
+  { path: '/', component: Home },
+  { path: '/dogspage', component: () => import ("./components/views/DogsPage") },
   { path: '/dogdetails/:id', component: DogDetails, props: true },
   // { path: '/dogdetails/id/:id', component: DogDetails },
-  { path: '/adopt', component: AdoptForm }
+  { path: '/adopt', component: () => import ("./components/views/AdoptForm") }
 ]
 
 const router = new VueRouter({
@@ -30,5 +28,5 @@ const router = new VueRouter({
 new Vue({
   router,
   vuetify,
-  render: h => h(Dashboard),
+  render: h => h(Nav),
 }).$mount('#app')

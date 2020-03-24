@@ -18,16 +18,5 @@
 export default {
 
 }
-// import Vue from 'vue'
-
-// Vue.component('nav-bar', {
-//   functional: true,
-//   template:  `<nav class='navbar'>
-//     <div style="width: 100%">
-//       <router-link to='/' class='navbar-item'>Home</router-link>
-//       <router-link to='/dogspage' class="navbar-item">Dogs Page</router-link>
-//     </div>
-//   </nav>`
-// })
 
 </script>

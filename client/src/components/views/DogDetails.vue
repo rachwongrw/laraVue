@@ -1,7 +1,6 @@
 <template>
   <div class="row">
-    <p>Dog: {{$route.params.id }}</p>
-    <!-- <v-col :key="dog.id" sm="3" cols="12">
+    <v-col :key="dog.id" sm="3" cols="12">
       <v-card class="mx-auto">
         <v-img class="white--text align-end" height="200px" :src="dog.img">
         </v-img>
@@ -17,14 +16,14 @@
           </v-btn>
         </v-card-actions>
       </v-card>
-    </v-col> -->
+    </v-col>
   </div>
 </template>
 
 <script>
 
 export default {
-  props: ['id'],
+  props: ['id', 'dog'],
   data() {
 
   }
