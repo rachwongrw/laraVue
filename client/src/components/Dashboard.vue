@@ -1,5 +1,5 @@
 <template>
-    <div style="text-align:center">
+    <div style="margin: 2% 5%">
       <section>
         <div>
           <nav class='navbar'>
