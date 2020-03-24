@@ -1,6 +1,5 @@
 <template>
   <div>
-    <nav-bar></nav-bar>
     <v-form v-model="valid">
       <h1 class="display-4" style="font-size: 3em">Adopt me</h1>
       <v-row>
@@ -78,7 +77,6 @@
 </template>
 
 <script>
-  import NavBar from './NavBar'
 
   export default {
     props: ['img'],
@@ -105,8 +103,5 @@
         v => !!v || 'Required field'
       ]
     }),
-    components: {
-      NavBar
-    },
   }
 </script>

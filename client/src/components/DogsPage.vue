@@ -1,7 +1,6 @@
 
 <template>
   <div>
-    <nav-bar></nav-bar>
     <v-row>
       <v-col v-for="dog in dogs" :key="dog.id" sm="3" cols="12">
         <v-card class="mx-auto">
@@ -15,7 +14,7 @@
 
           <v-card-actions>
             <v-btn text>
-              <router-link to='/dogdetails'>Learn more</router-link>
+              <router-link :to="{ path: '/dogdetails', params: { id: dog.id }}">Learn more</router-link>
             </v-btn>
             <v-btn text>
               <router-link to='/adopt'>Adopt</router-link>
@@ -39,8 +38,6 @@
   //   //   }
   // }) 
 
-  import NavBar from './NavBar'
-
   export default {
     data() {
       return {
@@ -56,9 +53,6 @@
             { id: 7, name: "Rex", age: 7, characteristics: "Ex-ski patrol dog. Still enjoys adventures in the wild", img: 'https://placedog.net/300/195?id=130' }
           ],
       }
-    },
-    components: {
-      NavBar
     },
     created() {
       this.isLoading = false
