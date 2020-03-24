@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-form v-model="valid">
+    <v-form v-model="valid" @submit="onSubmit">
       <h1 class="display-4" style="font-size: 3em">Adopt me</h1>
       <v-row>
         <v-col cols="12" md="4">
@@ -61,6 +61,7 @@
           ></v-text-field>
         </v-col>
       </v-row>
+      <v-btn style="color: #4a4a4a" type="submit">Submit</v-btn>
       <!-- <v-row>
         <v-col cols="12" md="4">
           <v-select
@@ -103,5 +104,26 @@
         v => !!v || 'Required field'
       ]
     }),
+    methods: {
+      onSubmit() {
+        let adoptForm = {
+          firstname: this.firstname,
+          lastname: this.lastname,
+          address: this.address,
+          postal: this.postal,
+          province: this.province,
+          phone: this.phone,
+          email: this.email,
+        }
+        this.$emit('adopt-form-submitted', adoptForm)
+        this.firstname = null,
+        this.lastname = null,
+        this.address = null,
+        this.postal = null,
+        this.province = null,
+        this.phone = null,
+        this.email = null
+      }
+    }
   }
 </script>
