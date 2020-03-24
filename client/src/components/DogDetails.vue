@@ -24,16 +24,7 @@
 </template>
 
 <script>
-// import Vue from 'vue'
 
-//   Vue.component('dogDetails', {
-//     functional: true,
-//     props: {
-//       dog: {
-//         required: true
-//       }
-//     }
-//   })
 export default {
   functional: true,
   props: {
